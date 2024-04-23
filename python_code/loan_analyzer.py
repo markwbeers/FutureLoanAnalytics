@@ -90,17 +90,25 @@ print(f"\tThe 'Present Value' of the loan is $ {present_value:,.2f} which is a.k
 # Shows the calculated present value, referred to as the 'Fair Value' of the loan.
 print(f"\tTherefore the 'Fair Value' of this loan is $ {present_value:,.2f}\n")
 
-# Concludes with the decision on the loan's worthiness based on its fair value compared to its future value.
-if present_value <= future_value:
-        print(f"\tSince the 'Fair Value' is $ {future_value - present_value:,.2f} less than its 'Future Value' of $ {future_value:,.2f} at maturity,\n")
-        print(f"\tThe loan is worth at least the cost to buy for $ {present_value:,.2f}, which is it's 'Present Value' today.\n")
+loan_sample = loan.get("loan_price")  # This retrieves the loan's purchase price.
 
-# Indicates that the loan is overpriced compared to its future value.
+
+# # Concludes with the decision on the loan's worthiness based on its fair value compared to its future value.
+# if present_value >= loan_sample:
+#         print(f"\tSince the 'Fair Value' is $ {future_value - present_value:,.2f} less than its 'Future Value' of $ {future_value:,.2f} at maturity,\n")
+#         print(f"\tThe loan is worth at least the cost to buy for $ {present_value:,.2f}, which is it's 'Present Value' today.\n")
+
+# # Indicates that the loan is overpriced compared to its future value.
+# else:
+#         print(f"\tSince the 'Fair Value' of the loan today is more than its 'Future Value' of $ {future_value:,.2f} at maturity.\n")
+#         print("\tThe loan is too expensive and not worth the price.")
+
+if present_value >= loan_sample:
+    print(f"\tSince the 'Present Value' of $ {present_value:,.2f} is equal to or greater than its purchase price of $ {loan_sample:,.2f},\n")
+    print(f"\tThe loan is worth buying at the price of $ {loan_sample:,.2f}.\n")
 else:
-        print(f"\tSince the 'Fair Value' of the loan today is more than its 'Future Value' of $ {future_value:,.2f} at maturity.\n")
-        print("\tThe loan is too expensive and not worth the price.")
-
-
+    print(f"\tSince the 'Present Value' of $ {present_value:,.2f} is less than its purchase price of $ {loan_sample:,.2f},\n")
+    print("\tThe loan is too expensive and not worth buying at this price.")
 
 # Part 3: Perform financial calculations using functions.
 
