@@ -104,6 +104,7 @@ else:
 
 # Part 3: Perform financial calculations using functions.
 
+# Defines a dictionary with new loan parameters.
 new_loan = {
     "loan_price": 800,
     "remaining_months": 12,
@@ -111,13 +112,16 @@ new_loan = {
     "future_value": 1000,
 }
 
-
+# Retrieves data from the 'new_loan' dictionary using the .get() method, ensuring safe access.
 new_loan_sample = new_loan.get("loan_price")
 new_loan_remaining_months = new_loan.get("remaining_months")
 new_loan_future_value = new_loan.get("future_value")
 new_loan_costs = new_loan.get("loan_price")
+
+# Calculates the present value of the new loan using a previously defined function 'fair_value_calculator'.
 new_present_value = fair_value_calculator(new_loan_future_value, discount_rate, new_loan_remaining_months)
 
+# Prints out the new loan data analysis results.
 print("Part 3: Perform Financial Calculations\n")
 print("\tGIVEN LOAN DATA:\n")
 print(f"\t1. The 'Future Value' of the loan is $ {new_loan_future_value:,.2f}")
@@ -130,43 +134,26 @@ print(f"\tThe present value of the new loan is: ${new_present_value:,.2f}\n")
 
 # Part 4: Conditionally filter lists of loans
 
+# Defines a list of dictionaries, each representing a loan with specific attributes.
 loans = [
-    {
-        "loan_price": 700,
-        "remaining_months": 9,
-        "repayment_interval": "monthly",
-        "future_value": 1000,
-    },
-    {
-        "loan_price": 500,
-        "remaining_months": 13,
-        "repayment_interval": "bullet",
-        "future_value": 1000,
-    },
-    {
-        "loan_price": 200,
-        "remaining_months": 16,
-        "repayment_interval": "bullet",
-        "future_value": 1000,
-    },
-    {
-        "loan_price": 900,
-        "remaining_months": 16,
-        "repayment_interval": "bullet",
-        "future_value": 1000,
-    },
+    {"loan_price": 700, "remaining_months": 9, "repayment_interval": "monthly", "future_value": 1000},
+    {"loan_price": 500, "remaining_months": 13, "repayment_interval": "bullet", "future_value": 1000},
+    {"loan_price": 200, "remaining_months": 16, "repayment_interval": "bullet", "future_value": 1000},
+    {"loan_price": 900, "remaining_months": 16, "repayment_interval": "bullet", "future_value": 1000},
 ]
 
+# Initializes an empty list to store loans priced at $500 or less.
+inexpensive_loans = [] 
 
-inexpensive_loans = [] #  <-- empty list
 loan_index = [] #  <-- empty list
 
 for chk_price in loans:     
     if chk_price['loan_price'] <= 500:
-        # inexpensive_loans.append(price['loan_price'])
         inexpensive_loans.append(chk_price)
-        loan_index.append(loans.index(chk_price))
+        loan_index.append(loans.index(chk_price)) # Stores index of inexpensive loans.
 
+
+# Output the process of filtering loans based on price.
 print("Part 4: Conditionally filter lists of loans\n")
 count_items_in_loans = len(loans)
 count_loan_index = len(loan_index)        
@@ -179,7 +166,7 @@ print("\tTo solve, we iterate over the list to find the 'inexpensive loans'.\n")
 print(f"\tThe {count_loan_index} 'inexpensive loans' in the portfolio are:\n")
 
 for price_only in inexpensive_loans:
-    print("\t$ {}".format(price_only["loan_price"])) 
+    print("\t$ {}".format(price_only["loan_price"])) # Displays prices of inexpensive loans.
 
 
 
@@ -188,15 +175,20 @@ for price_only in inexpensive_loans:
 print("\n")
 print("Part 5: Save the results\n")
 
+# Notifies the user of the action to take place.
 print("The final step in this challenge is to save our results by writing a .csv file named 'inexpensive_loans.csv'\n")
 
+# Confirms which part of the loan data will be saved.
 print(f"From the original {count_items_in_loans} loans in the given portfolio, we are asked to save the 'inexpensive loans' only.\n")
 
+# Provides feedback that saving process is starting.
 underline(f"... SAVING THE '{count_loan_index} inexpensive loans' shown below using csv module in Python.\n")
 
+# Defines the CSV file path and set the header for the CSV file.
 header = ["loan_price", "remaining_months", "repayment_interval", "future_value"]
 output_path = Path("inexpensive_loans.csv")
 
+# Opens the file in write mode and write the header and rows.
 csvpath = Path("inexpensive_loans.csv")
 with open(csvpath, 'w', newline='') as inexpensive_csv:
     csv_writer = csv.writer(inexpensive_csv)
