@@ -1,0 +1,250 @@
+branch_cleanup
+
+(base)
+solar@oxbow MINGW64 ~
+$ cd Desktop/Berkeley_FinTech_Boot_Camp/
+(base)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp
+$ ls
+FinTech_Workspace/  GitLab/
+(base)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp
+$ cd FinTech_Workspace/
+(base)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace
+$ cd FutureLoanAnalytics/
+(base)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ ls
+inexpensive_loans.csv  LICENSE  loan_analyzer.py  README.md
+(base)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git pull
+Already up to date.
+(base)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ ls
+inexpensive_loans.csv  LICENSE  loan_analyzer.py  README.md
+(base)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ conda activate dev
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ python loan analyzer.py
+C:\Users\solar\anaconda3\envs\dev\python.exe: can't open file 'loan': [Errno 2] No such file or directory
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ python loan_analyzer.py
+
+
+        ̲M̲O̲D̲U̲L̲E̲ ̲1̲ ̲C̲H̲A̲L̲L̲E̲N̲G̲E̲
+
+Part 1: Automate the Calculations
+
+        There are 5 loans in this portfolio.
+        Total amount lent out by this portfolio is $ 2,750.00
+        The average loan size in this portfolio is $ 550.00
+
+
+
+
+
+
+Part 2: Analyze Loan Data
+
+        GIVEN LOAN DATA:
+
+        1. The 'Future Value' of the loan is $ 1,000.00
+        2. There are 9 months left until this loan matures.
+        3. The 'Annual Interest Rate' of the $ 500.00 loan is 20.0%
+
+        The 'Present Value' of the loan is $ 861.77 which is a.k.a its 'Fair Value'
+
+        Therefore the 'Fair Value' of this loan is $ 861.77
+
+        Since the 'Present Value' of $ 861.77 is equal to or greater than its purchase price of $ 500.00,
+
+        The loan is worth buying at the price of $ 500.00.
+
+Part 3: Perform Financial Calculations
+
+        GIVEN LOAN DATA:
+
+        1. The 'Future Value' of the loan is $ 1,000.00
+        2. There are 12 months left until this new loan matures.
+        3. The 'Annual Interest Rate' of the new loan for $ 800.00 is 20.0%
+
+        ̲S̲O̲L̲U̲T̲I̲O̲N̲:̲
+
+        The present value of the new loan is: $820.08
+
+Part 4: Conditionally filter lists of loans
+
+        First we are given a loan inventory to evaluate to determine which loans are 'inexpensive'.
+        'Inexpensive' is defined as having a 'loan price' less than or equal to $500
+        The inventory is in the form of a list of 4 loans.
+
+        To solve, we iterate over the list to find the 'inexpensive loans'.
+
+        The 2 'inexpensive loans' in the portfolio are:
+
+        $ 500
+        $ 200
+
+
+Part 5: Save the results
+
+The final step in this challenge is to save our results by writing a .csv file named 'inexpensive_loans.csv'
+
+From the original 4 loans in the given portfolio, we are asked to save the 'inexpensive loans' only.
+
+.̲.̲.̲ ̲S̲A̲V̲I̲N̲G̲ ̲T̲H̲E̲ ̲'̲2̲ ̲i̲n̲e̲x̲p̲e̲n̲s̲i̲v̲e̲ ̲l̲o̲a̲n̲s̲'̲ ̲s̲h̲o̲w̲n̲ ̲b̲e̲l̲o̲w̲ ̲u̲s̲i̲n̲g̲ ̲c̲s̲v̲ ̲m̲o̲d̲u̲l̲e̲ ̲i̲n̲ ̲P̲y̲t̲h̲o̲n̲.̲
+
+Detailed Information of Inexpensive Loans being saved in CSV file:
+Loan Price: $500, Remaining Months: 13, Repayment Interval: End-term Lump Sum, Future Value: $1000
+Loan Price: $200, Remaining Months: 16, Repayment Interval: End-term Lump Sum, Future Value: $1000
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git status
+On branch taproot
+Your branch is up to date with 'origin/taproot'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    branch_testing/gitbash_session.log
+        deleted:    branch_testing/taproot_branch_test.txt
+        deleted:    python_code/inexpensive_loans.csv
+        deleted:    python_code/loan_analyzer.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        inexpensive_loans.csv
+        loan_analyzer.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ got add loan_analyzer.py
+bash: got: command not found
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git add loan_analyzer.py
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git commit -m "trying to clean up branch untracked"
+[taproot 1430aeb] trying to clean up branch untracked
+ 1 file changed, 238 insertions(+)
+ create mode 100644 loan_analyzer.py
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 3.33 KiB | 3.33 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/markwbeers/FutureLoanAnalytics.git
+   f18937a..1430aeb  taproot -> taproot
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git status
+On branch taproot
+Your branch is up to date with 'origin/taproot'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    branch_testing/gitbash_session.log
+        deleted:    branch_testing/taproot_branch_test.txt
+        deleted:    python_code/inexpensive_loans.csv
+        deleted:    python_code/loan_analyzer.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        inexpensive_loans.csv
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git rm .
+fatal: not removing '.' recursively without -r
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git restore --source HEAD --staged --worktree .
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git clean -fd
+Removing inexpensive_loans.csv
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git clean -nfd
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git clean -nfd
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git status
+On branch taproot
+Your branch is up to date with 'origin/taproot'.
+
+nothing to commit, working tree clean
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ ls
+branch_testing/  LICENSE  loan_analyzer.py  python_code/  README.md
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git status
+On branch taproot
+Your branch is up to date with 'origin/taproot'.
+
+nothing to commit, working tree clean
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ git switch roots
+branch 'roots' set up to track 'origin/roots'.
+Switched to a new branch 'roots'
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (roots)
+$ ls
+LICENSE  README.md  taproot_branch_test.txt
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (roots)
+$ git status
+On branch roots
+Your branch is up to date with 'origin/roots'.
+
+nothing to commit, working tree clean
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (roots)
+$ ls
+LICENSE  README.md  taproot_branch_test.txt
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (roots)
+$ cd ..
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace
+$ ls
+FutureLoanAnalytics/
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace
+$ cd FutureLoanAnalytics/
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (roots)
+$ ls
+LICENSE  README.md  taproot_branch_test.txt
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (roots)
+$ git switch taproot
+Switched to branch 'taproot'
+Your branch is up to date with 'origin/taproot'.
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$ ls
+branch_testing/  LICENSE  loan_analyzer.py  python_code/  README.md
+(dev)
+solar@oxbow MINGW64 ~/Desktop/Berkeley_FinTech_Boot_Camp/FinTech_Workspace/FutureLoanAnalytics (taproot)
+$
